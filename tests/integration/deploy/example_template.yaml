@@ -1,0 +1,14 @@
+apiVersion: octopusapi.cattle.io/v1alpha1
+kind: DeviceTemplate
+metadata:
+  name: my-template
+  namespace: default
+spec:
+  deviceKind: ModbusDevice
+  deviceVersion: v1alpha1
+  deviceGroup: devices.edge.cattle.io
+  deviceResource: modbusdevices
+  labels:
+    foo: bar
+  defaultRevisionName: ""
+  description: "template example"

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: octopus-ui
+  namespace: kube-system
+  labels:
+    app.kubernetes.io/name: octopus-ui
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8443
+    targetPort: http
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: octopus-ui

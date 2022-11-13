@@ -1,0 +1,30 @@
+apiVersion: octopusapi.cattle.io/v1alpha1
+kind: DeviceTemplateRevision
+metadata:
+  name: v1
+  namespace: default
+spec:
+  displayName: v1
+  enable: true
+  deviceTemplateName: my-template
+  deviceTemplateAPIVersion: octopusapi.cattle.io/v1alpha1
+  labels:
+    foo: bar
+    bbb: xxxx
+    ccc: bbbb
+  templateSpec:
+    protocol:
+      tcp:
+        ip: 127.0.0.1
+        port: 502
+        slaveID: 1
+    properties:
+      - name: temperature
+        description: enable data collection of temperature sensor
+        readOnly: false
+        visitor:
+          register: HoldingRegister
+          offset: 2
+          quantity: 8
+        value: '33.3'
+        dataType: float

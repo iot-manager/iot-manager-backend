@@ -1,0 +1,7 @@
+apiVersion: octopusapi.cattle.io/v1alpha1
+kind: Catalog
+metadata:
+  name: octopus-libraray
+  namespace: kube-system
+spec:
+  url: http://charts.cnrancher.com/octopus-catalog
